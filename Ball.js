@@ -1,7 +1,10 @@
 class Ball {
     constructor(x, y) {
       var options = {
-       isStatic: true
+       isStatic: false, 
+       restitution: 1, 
+        friction: 0.1, 
+        density: 0.7
       }
       this.body = Bodies.rectangle(x, y, 30, 30, options);
       this.width = 30;
@@ -11,8 +14,9 @@ class Ball {
     display(){
       var pos =this.body.position;
       rectMode(CENTER);
-      fill("pink");
+      fill("blue");
       rect(pos.x, pos.y, this.width, this.height);
+
      
     }
   };
